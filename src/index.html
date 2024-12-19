@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="styles.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Storage Analyzer</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script type="module" src="/main.js" defer></script>
+  </head>
+
+  <body>
+    <main class="container">
+      <div class="controls">
+        <select id="drive-select"></select>
+        <button id="analyze-btn">Analyze</button>
+        <div class="loading-indicator" id="loading-indicator" style="display: none;">
+          <div class="loading-spinner"></div>
+        </div>
+      </div>
+
+      <div class="storage-info">Select a drive to analyze...</div>
+
+      <div class="storage-container">
+        <div class="storage-bar" id="storageBar"></div>
+        <div class="tooltip" id="tooltip"></div>
+        <div class="storage-legend" id="storageLegend"></div>
+      </div>
+
+      <div class="pie-charts">
+        <div class="directories-chart-container" style="text-align: center;">
+          <h2>Largest Directories</h2>
+          <canvas id="directories-chart"></canvas>
+        </div>
+        <div class="files-chart-container" style="text-align: center;">
+          <h2>Largest Files</h2>
+          <canvas id="files-chart"></canvas>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>
